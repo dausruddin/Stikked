@@ -14,11 +14,15 @@ ST.show_embed = function() {
 };
 
 ST.expand = function() {
+    original_width = $('.text_formatted').width();
     $('.expander').show();
     $('.expand').click(function() {
+        
         if ($('.paste').hasClass('full')) {
             return false;
         }
+        $('.expander').hide();
+        $('.contracter').show();
         var window_width = $(window).width();
         var spacer = 20;
         if (window_width < 900) {
@@ -29,6 +33,23 @@ ST.expand = function() {
         $('.text_formatted').animate({
                 'width': new_width + 'px',
                 'left': '-' + (((window_width - 900) / 2 - spacer)) + 'px'
+            },
+            200);
+
+        return false;
+    });
+};
+
+ST.contract = function() {
+    $('.contracter').hide();
+    $('.contract').click(function() {
+        $('.contracter').hide();
+        $('.expander').show();
+        // $('.text_formatted').removeAttr('style');
+
+        $('.text_formatted').animate({
+                'width': original_width,
+                'left': 0
             },
             200);
         return false;
@@ -369,6 +390,7 @@ ST.clickable_urls = function() {
 
 ST.init = function() {
     ST.expand();
+    ST.contract();
     ST.show_embed();
     ST.spamadmin();
     ST.line_highlighter();

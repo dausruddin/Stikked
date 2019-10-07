@@ -42,6 +42,7 @@ if(isset($insert)){
             <?php echo lang('paste_viewdiffs'); ?> <a href="<?php echo $inreply['url']?>"><?php echo $inreply['title']; ?></a> <?php echo lang('paste_and'); ?> <a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 <?php } ?>
             <span class="expander hidden">&mdash; <a href="#" class="expand control"><?php echo lang('paste_expand'); ?></a> <?php echo lang('paste_fullwidth'); ?></span>
+            <span class="contracter hidden">&mdash; <a href="#" class="contract control"><?php echo lang('paste_contract'); ?></a> <?php echo lang('paste_originalwidth'); ?></span>
             </span>
 		</div>
 		<div class="qr">
