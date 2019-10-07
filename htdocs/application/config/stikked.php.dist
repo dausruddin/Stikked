@@ -223,6 +223,7 @@ $config['soft_api'] = false;
  *
  * private_only: No recent pastes will be displayed.
  * enable_captcha: Users must enter a captcha to post.
+ * captcha_length: Length of captcha.
  * recaptcha_publickey & recaptcha_privatekey: If filled, reCaptcha will be used (get a key from https://www.google.com/recaptcha/admin/create)
  * disable_api: Don't allow pasting via API (because we can't use a captcha there...)
  * disable_keep_forever: Don't allow pasting without expiration
@@ -233,6 +234,7 @@ $config['soft_api'] = false;
 **/
 $config['private_only'] = false;
 $config['enable_captcha'] = true;
+$config['captcha_length'] = 5;
 $config['recaptcha_publickey'] = '';
 $config['recaptcha_privatekey'] = '';
 $config['disable_api'] = false;

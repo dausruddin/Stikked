@@ -738,7 +738,8 @@ class Main extends CI_Controller
 		//get "word"
 		$pool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ@';
 		$str = '';
-		for ($i = 0;$i < 8;$i++) 
+        $length = config_item('captcha_length');
+		for ($i = 0;$i < $length;$i++) 
 		{
 			$str.= substr($pool, mt_rand(0, strlen($pool) - 1) , 1);
 		}
