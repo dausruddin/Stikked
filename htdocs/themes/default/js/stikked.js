@@ -5,7 +5,7 @@ ST.show_embed = function() {
     var lang_showcode = $embed_field.data('lang-showcode');
     $embed_field.hide();
     $embed_field.after('<a id="show_code" href="#">' + lang_showcode + '</a>');
-    $('#show_code').live('click',
+    $('#show_code').on('click',
         function() {
             $(this).hide();
             $embed_field.show().select();
@@ -38,7 +38,7 @@ ST.expand = function() {
 ST.spamadmin = function() {
     if ($('.content h1').text() == 'Spamadmin') {
         $('.content .hidden').show();
-        $('.content .quick_remove').live('click', function(ev) {
+        $('.content .quick_remove').on('click', function(ev) {
             var ip = $(ev.target).data('ip');
             if (confirm('Delete all pastes belonging to ' + ip + '?')) {
                 $.post(base_url + 'spamadmin/' + ip, {
