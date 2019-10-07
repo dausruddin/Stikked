@@ -468,4 +468,4 @@ if (!function_exists('display_captcha'))
 /* End of file captcha_helper.php */
 
 
-/* Location: ./system/heleprs/captcha_helper.php */
+/* Location: ./system/helpers/captcha_helper.php */
