@@ -29,6 +29,7 @@ $this->carabiner->css('bootstrap.min.css');
 $this->carabiner->css('font-awesome.min.css');
 $this->carabiner->css('style.css');
 $this->carabiner->css('codemirror.css');
+$this->carabiner->css('main.css');
 
 $this->carabiner->display('css'); 
 

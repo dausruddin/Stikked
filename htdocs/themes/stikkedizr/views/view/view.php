@@ -30,13 +30,13 @@ if(isset($insert)){
 <?php } ?>
 
 </div><?php }?>
-					<div class="detail"><span class="item"><?php echo lang('paste_url'); ?> </span><a href="<?php echo $url; ?>"><?php echo $url; ?></a></div>
+					<div class="detail options"><span class="item"><?php echo lang('paste_url'); ?> </span><a href="<?php echo $url; ?>"><?php echo $url; ?></a></div>
 					<?php if(!empty($snipurl)){?>
-						<div class="detail"><div class="item"><?php echo lang('paste_shorturl');?> </div><a href="<?php echo $snipurl; ?>"><?php echo htmlspecialchars($snipurl) ?></a></div>
+						<div class="detail options"><div class="item"><?php echo lang('paste_shorturl');?> </div><a href="<?php echo $snipurl; ?>"><?php echo htmlspecialchars($snipurl) ?></a></div>
 					<?php }?>
-					<div class="detail"><span class="item"><?php echo lang('paste_embed'); ?> </span><input data-lang-showcode="<?php echo lang('paste_showcode'); ?>" id="embed_field" type="text" value="<?php echo htmlspecialchars('<iframe src="' . site_url('view/embed/' . $pid) . '" style="border:none;width:100%"></iframe>'); ?>" /></div>
+					<div class="detail options"><span class="item"><?php echo lang('paste_embed'); ?> </span><input data-lang-showcode="<?php echo lang('paste_showcode'); ?>" id="embed_field" type="text" value="<?php echo htmlspecialchars('<iframe src="' . site_url('view/embed/' . $pid) . '" style="border:none;width:100%"></iframe>'); ?>" /></div>
 
-					<div class="detail">
+					<div class="detail options">
 <?php if($seg3 != 'diff'){ ?>
                     <a class="control" href="<?php echo site_url("view/download/".$pid); ?>"><?php echo lang('paste_download'); ?></a> <?php echo lang('paste_or'); ?> <a class="control" href="<?php echo site_url("view/raw/".$pid); ?>"><?php echo lang('paste_viewraw'); ?></a></div>
 <?php }else{ ?>
@@ -45,7 +45,7 @@ if(isset($insert)){
 				</div>
 				<div class="col-4 col-sm-12 col-lg-4">
 <?php if($this->config->item('qr_enabled')) { ?>
-					<img src="<?php echo site_url('view/qr/' . $pid ); ?>">
+					<img class="options" src="<?php echo site_url('view/qr/' . $pid ); ?>">
 <?php } ?>
 				</div>
 			</div>
@@ -56,9 +56,12 @@ if(isset($insert)){
 <section>
 	<div class="row">
 		<div class="col-12 col-sm-12 col-lg-12">
-			<blockquote class="CodeMirror"><span class="text_formatted"><span class="container" id="code"><?php echo $paste; ?></span></span></blockquote>
+			<blockquote class="CodeMirror"><span class="text_formatted"><span class="container"><?php echo $paste; ?></span></span></blockquote>
 		</div>
 	</div>
+    
+    
+
 </section>
 <section class="replies">
 <?php
