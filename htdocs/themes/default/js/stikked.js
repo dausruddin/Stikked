@@ -249,7 +249,7 @@ ST.crypto = function() {
                 $('.text_formatted .container div').html(decrypted);
 
                 // kick out potential dangerous and unnecessary stuff
-                $('.text_formatted').css('background', '#efe');
+                // $('.text_formatted').css('background', '#efe');
                 $('.replies').hide();
                 // for (var i = 2; i <= 7; i++) {
                     // $('.meta .detail:nth-child(' + i + ')').hide();
@@ -257,7 +257,7 @@ ST.crypto = function() {
                 $('.options').hide();
                 $('.meta .spacer:first').hide();
                 $('.qr').hide();
-            } catch (e) {}
+            } catch (e) { console.log(e)}
         }
     }
 }
