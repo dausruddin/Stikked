@@ -13,6 +13,7 @@ if(isset($ace_modes)){
 
 //Javascript
 $this->carabiner->js('jquery.js');
+$this->carabiner->js('jquery.browser.min.js');
 $this->carabiner->js('jquery.timers.js');
 $this->carabiner->js('jquery-ui-selectable-combined.min.js');
 $this->carabiner->js('crypto-js/rollups/aes.js');
