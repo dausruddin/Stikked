@@ -255,11 +255,17 @@ h4 {
 }
 
 .form_wrapper button {
-	clear: both;
+	/* clear: both; */
 	float: left;
 	margin-left: 150px;
 	width: 125px;
 	height: 40px;
+    margin-top: 20px;
+    padding: 0 0;
+}
+
+#create_encrypted {
+    margin-left: 10px;
 }
 
 .form_wrapper .message_wrapper .message {
@@ -468,6 +474,7 @@ h4 {
 	background-color:#F8F8F8;
 	border:1px solid #ddd;
 	padding:3px;
+	position: relative;
 }
 
 .paste .text_formatted.full {
@@ -600,7 +607,7 @@ button {
 		color-stop(1, rgb(253,170,111))
 	);
 	padding: 11px 10px;
-	clear: both;
+	/* clear: both; */
 	margin: 0 0 15px 0;	
 }
 
