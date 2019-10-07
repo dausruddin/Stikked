@@ -116,10 +116,6 @@ class Api extends Main
 			die("Invalid API key\n");
 		}
 		
-		if (config_item('private_only')) 
-		{
-			show_404();
-		}
 		$this->load->model('pastes');
 		$check = $this->pastes->checkPaste(3);
 		

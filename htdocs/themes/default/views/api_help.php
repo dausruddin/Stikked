@@ -1,22 +1,25 @@
 <?php $this->load->view("defaults/header");?>
 
 <div class="api">
+
 	<h1>API</h1>
     <p class="explain border">Create pastes from the commandline</p>
 
+    <?php if (config_item('private_only')) { echo "<p class='explain'><font style='color:red;font-weight:bold;'>IMPORTANT NOTICE: Private mode is activated. Some API endpoints are disabled.</font></p>"; } ?>
+    
 	<h2>API URL</h2>
     <p class="explain"><code><?php echo site_url('api'); ?></code></p>
 
 	<h2>Get paste</h2>
     <p class="explain"><code><?php echo site_url('api/paste/[pasteid]'); ?></code></p>
 
-	<h2>Get random paste</h2>
+	<h2><?php if (config_item('private_only')) { echo "<strike>"; } ?>Get random paste<?php if (config_item('private_only')) { echo "</strike>"; } ?></h2>
     <p class="explain"><code><?php echo site_url('api/random'); ?></code></p>
 
-	<h2>Get recent pastes</h2>
+	<h2><?php if (config_item('private_only')) { echo "<strike>"; } ?>Get recent pastes<?php if (config_item('private_only')) { echo "</strike>"; } ?></h2>
     <p class="explain"><code><?php echo site_url('api/recent'); ?></code></p>
 
-	<h2>Get trending pastes</h2>
+	<h2><?php if (config_item('private_only')) { echo "<strike>"; } ?>Get trending pastes<?php if (config_item('private_only')) { echo "</strike>"; } ?></h2>
     <p class="explain"><code><?php echo site_url('api/trending'); ?></code></p>
 
 	<h2>List available languages</h2>

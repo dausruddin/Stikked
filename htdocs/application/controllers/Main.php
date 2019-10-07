@@ -638,11 +638,15 @@ class Main extends CI_Controller
 	{
 		$this->_valid_authentication();
 		
-		if (config_item('private_only')) 
+        if (config_item('private_only')) 
 		{
 			show_404();
 		}
-		else
+        elseif (config_item('disable_list')) 
+		{
+			die("Trending has been disabled\n");
+		}
+        else
 		{
 			$this->load->model('pastes');
 			
@@ -668,12 +672,16 @@ class Main extends CI_Controller
 	{
 		$this->_valid_authentication();
 		
-		if (config_item('private_only')) 
+        if (config_item('private_only')) 
 		{
 			show_404();
 		}
-		else
+		elseif (config_item('disable_trends')) 
 		{
+			die("Trending has been disabled\n");
+		}
+        else
+        {
 			$this->load->model('pastes');
 			$data = $this->pastes->getTrends();
 			$this->load->view('trends', $data);
@@ -728,6 +736,14 @@ class Main extends CI_Controller
 	
 	function about() 
 	{
+        if (config_item('private_only')) 
+		{
+			show_404();
+		}
+        elseif (config_item('disable_about')) 
+		{
+			die("About has been disabled\n");
+		}
 		$this->load->view('about');
 	}
 	

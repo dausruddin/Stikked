@@ -197,6 +197,17 @@ $config['backup_pass'] = '';
 $config['per_page'] = 15;
 
 /**
+ * Disable pages
+ *
+ * Set to false to enable
+ * Set to true to disable
+ * For API, see $config['disable_api'] under Anti spam
+**/
+$config['disable_recent'] = false;
+$config['disable_trends'] = false;
+$config['disable_about'] = false;
+
+/**
  * API key
  *
  * Require a key to interact with the API.
@@ -221,7 +232,7 @@ $config['soft_api'] = false;
 /**
  * Anti spam
  *
- * private_only: No recent pastes will be displayed.
+ * private_only: Turn into private mode. Recent and Trending page will be disable. New pastes will be set as private.
  * enable_captcha: Users must enter a captcha to post.
  * captcha_length: Length of captcha.
  * recaptcha_publickey & recaptcha_privatekey: If filled, reCaptcha will be used (get a key from https://www.google.com/recaptcha/admin/create)
