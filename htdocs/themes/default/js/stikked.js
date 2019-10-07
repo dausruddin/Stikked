@@ -157,6 +157,10 @@ ST.crypto = function() {
     $('#create_encrypted').on('click', function() {
         var $code = $('#code');
 
+        if($.trim($code.val()) == ''){
+            alert('Text cannot be empty!');
+            return false;
+        }
         // encrypt the paste
         var key = ST.crypto_generate_key(32);
         var plaintext = $code.val();
