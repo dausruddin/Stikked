@@ -55,8 +55,8 @@
 
 	<h3>Return values</h3>
     <p class="explain">
-        On success, the API returns the paste URL: <code><?php echo site_url('view/[pasteid]'); ?></code><br />
-        On error, the API returns the error message: <code>Error: Missing paste text</code>
+        On success, the API returns the paste URL: <code>{"url":"<?php echo site_url('view/[pasteid]'); ?>"}</code><br />
+        On error, the API returns the error message: <code>{"error":"Error: Missing paste text"}</code>
     </p>
 
 	<h2>Examples</h2>

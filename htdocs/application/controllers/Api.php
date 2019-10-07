@@ -57,7 +57,7 @@ class Api extends Main
 		
 		if (!$this->input->post('text')) 
 		{
-			$data['msg'] = 'Error: Missing paste text';
+			$data['msg'] = json_encode(array('error' => 'Missing paste text'));
 			$this->load->view('view/api', $data);
 		}
 		else
@@ -78,7 +78,8 @@ class Api extends Main
 			
 			if (!$this->_valid_ip()) 
 			{
-				die("You are not allowed to paste\n");
+                $data['msg'] = json_encode(array('error' => 'You are not allowed to paste'));
+                $this->load->view('view/api', $data);
 			}
 			
 			if (config_item('soft_api') == true && (config_item('apikey') == $this->input->get('apikey'))) 
@@ -92,7 +93,8 @@ class Api extends Main
 				
 				if (!$this->_blockwords_check()) 
 				{
-					die("Your paste contains blocked words\n");
+                    $data['msg'] = json_encode(array('error' => 'Your paste contains blocked words'));
+                    $this->load->view('view/api', $data);
 				}
 			}
 
@@ -103,7 +105,7 @@ class Api extends Main
 
 			//create paste
 			$paste_url = $this->pastes->createPaste();
-			$data['msg'] = base_url() . $paste_url;
+			$data['msg'] = json_encode(array('url' => base_url() . $paste_url));
 			$this->load->view('view/api', $data);
 		}
 	}
@@ -129,6 +131,7 @@ class Api extends Main
 				'message' => 'Not found',
 			);
 		}
+        header('Content-Type: application/json');
 		echo json_encode($data);
 	}
 	
@@ -146,6 +149,7 @@ class Api extends Main
 		}
 		$this->load->model('pastes');
 		$data = $this->pastes->random_paste();
+        header('Content-Type: application/json');
 		echo json_encode($data);
 	}
 	
@@ -175,6 +179,7 @@ class Api extends Main
 				'lang' => $paste['lang'],
 			);
 		}
+        header('Content-Type: application/json');
 		echo json_encode($data);
 	}
 	
@@ -205,6 +210,7 @@ class Api extends Main
 				'hits' => $paste['hits'],
 			);
 		}
+        header('Content-Type: application/json');
 		echo json_encode($data);
 	}
 	
@@ -216,6 +222,7 @@ class Api extends Main
 		}
 		
 		$languages = $this->languages->get_languages();
+        header('Content-Type: application/json');
 		echo json_encode($languages);
 	}
 }
