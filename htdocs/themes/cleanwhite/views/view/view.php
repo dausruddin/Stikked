@@ -28,10 +28,11 @@ if(isset($insert)){
 			<div class="spacer"></div>
 			By: <?=$name?> | <?php $p = explode(',', timespan($created, time())); echo sprintf($this->lang->line('paste_ago'),$p[0]); ?> | Syntax: <?=$lang?> | Views: <?php echo number_format($hits, 0, '.', "'"); ?>
 			<div class="spacer"></div>
-			<span class="detail"><span class="item">URL </span><a href="<?=$url?>" style="color: #858585;text-decoration: none;"><?=$url?></a></span>
-			<span class="detail"><span class="item"><?php echo lang('paste_embed'); ?> </span><input data-lang-showcode="<?php echo lang('paste_showcode'); ?>" id="embed_field" type="text" value="<?php echo htmlspecialchars('<iframe src="' . site_url('view/embed/' . $pid . '/' . $seg3) . '" style="border:none;width:100%"></iframe>'); ?>" /></span>
+			<span class="options"><span class="item">URL </span><a href="<?=$url?>" style="color: #858585;text-decoration: none;"><?=$url?></a></span>
+            <div class="spacer"></div>
+			<span class="options"><span class="item"><?php echo lang('paste_embed'); ?> </span><input data-lang-showcode="<?php echo lang('paste_showcode'); ?>" id="embed_field" type="text" value="<?php echo htmlspecialchars('<iframe src="' . site_url('view/embed/' . $pid . '/' . $seg3) . '" style="border:none;width:100%"></iframe>'); ?>" /></span>
 			<?php if(!empty($snipurl)){?>
-				<span class="detail"><span class="item">Snipurl </span><a href="<?=$snipurl?>" style="text-decoration: none;"><?php echo htmlspecialchars($snipurl) ?></a></span>
+				<span class="options"><span class="item">Snipurl </span><a href="<?=$snipurl?>" style="text-decoration: none;"><?php echo htmlspecialchars($snipurl) ?></a></span>
 			<?php }?>
 			
 				<div class="spacer"></div>
@@ -43,10 +44,9 @@ if(isset($insert)){
 
 <ul class="actions">
 	<div class="container">
-		<li><a href="<?=site_url("view/download/".$pid)?>"><img src="<?=site_url("themes/cleanwhite/images/download.png")?>" alt="disk" class="icon"/>Download Paste</a></li> 
-		<li><a href="#reply"><img src="<?=site_url("themes/cleanwhite/images/reply.png")?>" alt="speech bubble" class="icon"/>Reply to this paste</a></li>
-		<li><a href="<?=site_url("view/raw/".$pid)?>"><img src="<?=site_url("themes/cleanwhite/images/raw.png")?>" alt="blank document" class="icon"/>View Raw</a></li>
-		<li><a href="<?=site_url("view/plaintext/".$pid)?>"><img src="<?=site_url("themes/cleanwhite/images/raw.png")?>" alt="blank document" class="icon"/>Plaintext</a></li>
+		<li class="options"><a href="<?=site_url("view/download/".$pid)?>"><img src="<?=site_url("themes/cleanwhite/images/download.png")?>" alt="disk" class="icon"/>Download Paste</a></li> 
+		<li class="options"><a href="#reply"><img src="<?=site_url("themes/cleanwhite/images/reply.png")?>" alt="speech bubble" class="icon"/>Reply to this paste</a></li>
+		<li class="options"><a href="<?=site_url("view/raw/".$pid)?>"><img src="<?=site_url("themes/cleanwhite/images/raw.png")?>" alt="blank document" class="icon"/>View Raw</a></li>
 		<li class="expander hidden"><a href="#" class="expand"><img src="<?=site_url("themes/cleanwhite/images/expand.png")?>" alt="arrows" class="icon"/>Expand paste to fill the whole browser</a></li>
 		<li class="contracter hidden"><a href="#" class="contract"><img src="<?=site_url("themes/cleanwhite/images/expand.png")?>" alt="arrows" class="icon"/>Contract paste to return to the old width</a></li>
 	</div>

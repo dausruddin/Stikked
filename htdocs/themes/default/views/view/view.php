@@ -28,21 +28,21 @@ if(isset($insert)){
 
 </span><?php }?>
 			<div class="spacer"></div>
-			<span class="detail"><span class="item"><?php echo lang('paste_url'); ?> </span><a href="<?php echo $page_url; ?>"><?php echo $page_url; ?></a></span>
+			<span class="detail options"><span class="item"><?php echo lang('paste_url'); ?> </span><a href="<?php echo $page_url; ?>"><?php echo $page_url; ?></a></span>
 			<?php if(!empty($snipurl)){?>
-				<span class="detail"><span class="item"><?php echo lang('paste_shorturl'); ?> </span><a href="<?php echo $snipurl; ?>"><?php echo htmlspecialchars($snipurl) ?></a></span>
+				<span class="detail options"><span class="item"><?php echo lang('paste_shorturl'); ?> </span><a href="<?php echo $snipurl; ?>"><?php echo htmlspecialchars($snipurl) ?></a></span>
 			<?php }?>
-			<span class="detail"><span class="item"><?php echo lang('paste_embed'); ?> </span><input data-lang-showcode="<?php echo lang('paste_showcode'); ?>" id="embed_field" type="text" value="<?php echo htmlspecialchars('<iframe src="' . site_url('view/embed/' . $pid . '/' . $seg3) . '" style="border:none;width:100%"></iframe>'); ?>" /></span>
+			<span class="detail options"><span class="item"><?php echo lang('paste_embed'); ?> </span><input data-lang-showcode="<?php echo lang('paste_showcode'); ?>" id="embed_field" type="text" value="<?php echo htmlspecialchars('<iframe src="' . site_url('view/embed/' . $pid . '/' . $seg3) . '" style="border:none;width:100%"></iframe>'); ?>" /></span>
 			<div class="spacer"></div>
 			
 			<span class="detail">
 <?php if($seg3 != 'diff'){ ?>
-            <a class="control" href="<?php echo site_url("view/download/".$pid); ?>"><?php echo lang('paste_download'); ?></a> <?php echo lang('paste_or'); ?> <a class="control" href="<?php echo site_url("view/raw/".$pid); ?>"><?php echo lang('paste_viewraw'); ?></a>
+            <span class="options"><a class="control" href="<?php echo site_url("view/download/".$pid); ?>"><?php echo lang('paste_download'); ?></a> <?php echo lang('paste_or'); ?> <a class="control" href="<?php echo site_url("view/raw/".$pid); ?>"><?php echo lang('paste_viewraw'); ?></a> &mdash;</span>
 <?php }else{ ?>
             <?php echo lang('paste_viewdiffs'); ?> <a href="<?php echo $inreply['url']?>"><?php echo $inreply['title']; ?></a> <?php echo lang('paste_and'); ?> <a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 <?php } ?>
-            <span class="expander hidden">&mdash; <a href="#" class="expand control"><?php echo lang('paste_expand'); ?></a> <?php echo lang('paste_fullwidth'); ?></span>
-            <span class="contracter hidden">&mdash; <a href="#" class="contract control"><?php echo lang('paste_contract'); ?></a> <?php echo lang('paste_originalwidth'); ?></span>
+            <span class="expander hidden"> <a href="#" class="expand control"><?php echo lang('paste_expand'); ?></a> <?php echo lang('paste_fullwidth'); ?></span>
+            <span class="contracter hidden"> <a href="#" class="contract control"><?php echo lang('paste_contract'); ?></a> <?php echo lang('paste_originalwidth'); ?></span>
             </span>
 		</div>
 		<div class="qr">
