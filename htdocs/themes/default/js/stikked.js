@@ -226,10 +226,11 @@ ST.crypto = function() {
         } else {
             try {
                 var $code = $('#code');
+                var $code_encrypted_ori = $('#code');
                 var encrypted = $code.val().replace(/\n/g, '');
                 var decrypted = CryptoJS.AES.decrypt(encrypted, key).toString(CryptoJS.enc.Utf8) + '';
                 decrypted = LZString.decompressFromBase64(decrypted);
-                $code.val(decrypted);
+                // $code.val(decrypted);
 
                 // add a breaking_space after 90 chars (for later)
                 decrypted = decrypted.replace(/(.{90}.*?) /g, "$1{{{breaking_space}}}");
