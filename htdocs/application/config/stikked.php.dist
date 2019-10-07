@@ -9,6 +9,16 @@
 $config['site_name'] = 'Stikked';
 
 /**
+ * Footer
+ *
+ * enable_footer: Enable footer
+ * footer_message: Message displayed on footer. HTML supported.  Set to 'default' to use default Stikked footer message.
+ *
+*/
+$config['enable_footer'] = true;
+$config['footer_message'] = 'Powered <a href="//google.com">google</a>';
+
+/**
  * Base URL
  *
  * Set the base URL of Stikked. WITH trailing slash!
