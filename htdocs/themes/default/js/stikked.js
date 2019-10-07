@@ -251,9 +251,10 @@ ST.crypto = function() {
                 // kick out potential dangerous and unnecessary stuff
                 $('.text_formatted').css('background', '#efe');
                 $('.replies').hide();
-                for (var i = 2; i <= 7; i++) {
-                    $('.meta .detail:nth-child(' + i + ')').hide();
-                }
+                // for (var i = 2; i <= 7; i++) {
+                    // $('.meta .detail:nth-child(' + i + ')').hide();
+                // }
+                $('.options').hide();
                 $('.meta .spacer:first').hide();
                 $('.qr').hide();
             } catch (e) {}
