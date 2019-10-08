@@ -487,7 +487,7 @@ class Main extends CI_Controller
 			//form validation
 			$this->form_validation->set_rules($rules);
 			$this->form_validation->set_message('min_length', lang('empty'));
-			$this->form_validation->set_error_delimiters('<div class="message error"><div class="container">', '</div></div>');
+			$this->form_validation->set_error_delimiters('<div class="message error alert alert-danger"><div class="container">', '</div></div>');
 			
 			if ($this->form_validation->run() == FALSE) 
 			{

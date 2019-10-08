@@ -1,0 +1,1 @@
+$('button[name=submit]').after('<button class="btn btn-dark" id="create_encrypted">Create encrypted</button>');
